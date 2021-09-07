@@ -36,6 +36,7 @@ export default ({
        let new_x = 0.0;
        let new_y = 0.0;
        let wheel_radius = 200.00;
+       let wheel_theta = 0;
        const cards = document.querySelectorAll('.card');
        const wheel = document.querySelector('.wheel');
        const center = {
@@ -55,8 +56,9 @@ export default ({
        
 
        document.addEventListener('wheel', event => {
-           let scroll_speed = event.wheelDeltaY;
-            wheel.style.transform = `rotate(${theta + scroll_speed})`       })
+           let scroll_speed = event.wheelDeltaY + 0.002;
+           wheel_theta = wheel_theta + scroll_speed;
+            wheel.style.transform = `translate(-50%, -50%) rotate(${wheel_theta + (180/Math.PI)}deg)`       })
      
 
    }
