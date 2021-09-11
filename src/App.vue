@@ -68,5 +68,6 @@ body{
   padding: 0;
   width: 100vw;
   height: 100vh;
+  background-color: rgb(238, 25, 25);
 }
 </style>

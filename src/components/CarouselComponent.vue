@@ -1,14 +1,16 @@
 <template>
-<div class="wheel">
-    <div class="card"></div>
-    <div class="card"></div>
-    <div class="card"></div>
-    <div class="card"></div>
-    <div class="card"></div>
-    <div class="card"></div>
-    <div class="card"></div>
-    <div class="card"></div>
-
+<div class="center">
+<div class="record"></div>
+<div class="wheel ">
+    <div class="card circle"><img class="circle" src="https://place-hold.it/100x100"></div>
+    <div class="card circle"><img class="circle" src="https://place-hold.it/100x100"></div>
+    <div class="card circle"><img class="circle" src="https://place-hold.it/100x100"></div>
+    <div class="card circle"><img class="circle" src="https://place-hold.it/100x100"></div>
+    <div class="card circle"><img class="circle" src="https://place-hold.it/100x100"></div>
+    <div class="card circle"><img class="circle" src="https://place-hold.it/100x100"></div>
+    <div class="card circle"><img class="circle" src="https://place-hold.it/100x100"></div>
+    <div class="card circle"><img class="circle" src="https://place-hold.it/100x100"></div>
+</div>
 </div>
 </template>
 <script>
@@ -35,7 +37,7 @@ export default ({
        let new_theta = 0.0;
        let new_x = 0.0;
        let new_y = 0.0;
-       let wheel_radius = 200.00;
+       let wheel_radius = 300.00;
        let wheel_theta = 0;
        const cards = document.querySelectorAll('.card');
        const wheel = document.querySelector('.wheel');
@@ -72,8 +74,8 @@ export default ({
 .wheel {
     width: 300px;
     height: 200px;
-    background-color: blue;
- 
+    /* background-color: blue; */
+    margin-top: 50px; 
 /* This is based off the top left corner of the rectangle. It is placed in the center of the page. */
     position: absolute;
     left: 50%;
@@ -83,14 +85,44 @@ export default ({
     transform: translate(-50%, -50%);
 }
 .card {
-    width: 90px;
-    height: 50px;
-    background-color: red;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(184, 184, 184);
 
     position: absolute;
     top:50%;
     left:50%;
     transform: translate(-50%,-50%);
 
+}
+.center{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.circle{
+    border-radius:50%;
+    display: inline-block;
+    margin-right:20px;
+}
+.record{
+    width:1300px;
+    height:1300px;
+    background-image: url("../assets/brett-jordan-hrUhyFq6u-A-unsplash.png");
+    background-size: 800px 800px;
+    background-repeat: no-repeat;
+    margin-top: 50px; 
+
+    /* width: 300px;
+    height: 200px;     */
+
+/* This is based off the top left corner of the rectangle. It is placed in the center of the page. */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    /* This moves the whole square to the center of the page */
+    /* This is the wheel. Wherever this moves the images move */
+    transform: translate(-30%, -30%);
 }
 </style>
