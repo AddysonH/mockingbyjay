@@ -1,15 +1,39 @@
 <template>
-<div class="center">
+<div class="center">    
 <div class="record"></div>
 <div class="wheel ">
-    <div class="card circle"><img class="circle" src="https://place-hold.it/100x100"></div>
-    <div class="card circle"><img class="circle" src="https://place-hold.it/100x100"></div>
-    <div class="card circle"><img class="circle" src="https://place-hold.it/100x100"></div>
-    <div class="card circle"><img class="circle" src="https://place-hold.it/100x100"></div>
-    <div class="card circle"><img class="circle" src="https://place-hold.it/100x100"></div>
-    <div class="card circle"><img class="circle" src="https://place-hold.it/100x100"></div>
-    <div class="card circle"><img class="circle" src="https://place-hold.it/100x100"></div>
-    <div class="card circle"><img class="circle" src="https://place-hold.it/100x100"></div>
+    <div class="card ">
+        <p class="card-title">A Name</p>
+        <img class="" src="https://place-hold.it/100x100">
+    </div>
+    <div class="card ">
+        <p class="card-title">A Name</p>
+        <img class="" src="https://place-hold.it/100x100">
+    </div>
+    <div class="card ">
+        <p class="card-title">A Name</p>
+        <img class="" src="https://place-hold.it/100x100">
+    </div>
+    <div class="card ">
+        <p class="card-title">A Name</p>
+        <img class="" src="https://place-hold.it/100x100">
+    </div>
+   <div class="card ">
+        <p class="card-title">A Name</p>
+        <img class="" src="https://place-hold.it/100x100">
+    </div>
+    <div class="card ">
+        <p class="card-title">A Name</p>
+        <img class="" src="https://place-hold.it/100x100">
+    </div>
+    <div class="card ">
+        <p class="card-title">A Name</p>
+        <img class="" src="https://place-hold.it/100x100">
+    </div>
+    <div class="card ">
+        <p class="card-title">A Name</p>
+        <img class="" src="https://place-hold.it/100x100">
+    </div>
 </div>
 </div>
 </template>
@@ -58,11 +82,21 @@ export default ({
        
 
        document.addEventListener('wheel', event => {
-           let scroll_speed = event.wheelDeltaY + 0.002;
-           wheel_theta = wheel_theta + scroll_speed;
-            wheel.style.transform = `translate(-50%, -50%) rotate(${wheel_theta + (180/Math.PI)}deg)`       })
-     
+        //    let scroll_speed = event.wheelDeltaY + 0.002;
+              let scroll_speed = (event.wheelDeltaY / 360) * 20;
 
+              wheel_theta = wheel_theta + scroll_speed;
+              wheel.style.transform = `translate(-50%, -50%) rotate(${wheel_theta}deg)`      
+              
+              
+          //  + (180/Math.PI)
+
+          cards.forEach(card => {
+            card.style.transform = `translate(-50%, -50%) rotate(${-1.0 * wheel_theta}deg)`       
+              });
+              
+
+          });
    }
 
     
@@ -75,7 +109,7 @@ export default ({
     width: 300px;
     height: 200px;
     /* background-color: blue; */
-    margin-top: 50px; 
+    /* margin-top: 50px;  */
 /* This is based off the top left corner of the rectangle. It is placed in the center of the page. */
     position: absolute;
     left: 50%;
@@ -97,8 +131,9 @@ export default ({
 }
 .center{
 display: flex;
-justify-content: center;
-align-items: center;
+/* justify-content: center; */
+/* align-items: center; */
+margin-top: 800px;
 }
 
 .circle{
@@ -107,12 +142,12 @@ align-items: center;
     margin-right:20px;
 }
 .record{
-    width:1300px;
-    height:1300px;
+    width:800px;
+    height:800px;
     background-image: url("../assets/brett-jordan-hrUhyFq6u-A-unsplash.png");
     background-size: 800px 800px;
     background-repeat: no-repeat;
-    margin-top: 50px; 
+    /* margin-top: 50px;  */
 
     /* width: 300px;
     height: 200px;     */
@@ -123,6 +158,7 @@ align-items: center;
     top: 50%;
     /* This moves the whole square to the center of the page */
     /* This is the wheel. Wherever this moves the images move */
-    transform: translate(-30%, -30%);
+    transform: translate(-50%, -50%);
 }
+
 </style>

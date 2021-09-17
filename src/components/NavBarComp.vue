@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    <!-- <div id="nav">
+    <div class="navTop">
+        <div id="nav ">
        <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">Navbar</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,36 +36,25 @@
     </form>
   </div>
 </nav>
-    </div> -->
-    <router-view/>
-  </div>
+    </div>
+    </div>
 </template>
+<script>
 
+export default ({
+    name: "NavBarComp"
+})
+</script>
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-/* #nav {
-  padding: 30px;
-} */
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-
-body{
-  /* margin:0; */
-  /* padding: 0; */
-  background-color: rgb(238, 25, 25);
+.navTop{
+    height: 100px; /* Full-height: remove this if you want " auto height */
+    width: 100%; /* Set the width of the sidebar */
+    position: fixed; /* Fixed sidebar (stay in place on scroll)*/
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #111; /*black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
 }
 </style>
